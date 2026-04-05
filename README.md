@@ -3,7 +3,7 @@
 A personal wiki system powered by Claude in Cowork. Drop raw sources in, get a
 structured, interlinked wiki out. Query it, lint it, grow it over time.
 
-Inspired by [this workflow](https://karpathy.ai) by Andrej Karpathy.
+Inspired by [this workflow](https://x.com/karpathy/status/2039805659525644595?s=46) by Andrej Karpathy.
 
 ---
 
@@ -33,12 +33,6 @@ your-kb-folder/
 ├── index/      ← master index, ingest logs, topic summaries
 ├── output/     ← Q&A answers, slides, charts
 └── tools/      ← helper scripts Claude writes
-```
-
-Make `raw/` read-only so Claude can never accidentally modify source files:
-
-```bash
-chmod -R 555 /path/to/your-kb-folder/raw
 ```
 
 ### 2. Create a Cowork Project
