@@ -47,13 +47,28 @@ the core idea after reading this alone.
 
 ## Details
 Thorough explanation. Use subheadings (###) freely for complex topics.
-Cite sources inline as (Source: filename).
+Every specific fact, claim, statistic, or opinion must be attributed inline
+at the sentence level: (Source: filename). Don't batch citations at the end
+of paragraphs — attach them to the exact sentence they support. If a whole
+paragraph comes from one source, cite at the end of the paragraph.
+
+**Example of correct inline citation:**
+> The platform earns revenue primarily from medication margins rather than
+> consultation fees. (Source: medvi-analysis.md) Physicians are compensated
+> per consultation, filling spare calendar capacity much like Uber drivers.
+> (Source: medvi-analysis.md)
 
 ## Key Facts
 - Bullet points of the most important discrete, concrete facts.
+- Each fact that comes from a specific source should end with (Source: filename).
 
 ## Related Concepts
 - [[concept-name]] — one sentence on why it's related
+
+The double brackets are Obsidian wikilink syntax — they must always be used
+here, not plain text. This is what enables Obsidian's graph view and backlinks
+panel. The concept-name should match the filename of the linked article
+(without .md), e.g. [[telemedicine-prescription-model]].
 
 ## Open Questions
 Unresolved ambiguities, contradictions between sources, or gaps worth
@@ -80,8 +95,10 @@ Write the full article using content from the relevant `raw/` files. Be
 thorough in the Details section — this is a reference document, not a stub.
 Vague or minimal articles defeat the purpose of the knowledge base.
 
-Cross-reference other articles generously in Related Concepts. Good crosslinking
-is what makes the wiki queryable rather than just a pile of summaries.
+Cross-reference other articles generously in Related Concepts using Obsidian
+wikilink syntax: [[article-filename]]. Good crosslinking is what makes the
+wiki navigable and queryable. You can also use [[wikilinks]] inline within
+the Details section when naturally mentioning a related concept.
 
 ### 2. For each recommended enrichment to an existing article
 
