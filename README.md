@@ -3,7 +3,7 @@
 A personal wiki system powered by Claude in Cowork. Drop raw sources in, get a
 structured, interlinked wiki out. Query it, lint it, grow it over time.
 
-Inspired by [this workflow](https://x.com/karpathy/status/2039805659525644595?s=46) by Andrej Karpathy.
+Inspired by [this workflow](https://karpathy.ai) by Andrej Karpathy.
 
 ---
 
@@ -33,6 +33,12 @@ your-kb-folder/
 ├── index/      ← master index, ingest logs, topic summaries
 ├── output/     ← Q&A answers, slides, charts
 └── tools/      ← helper scripts Claude writes
+```
+
+Make `raw/` read-only so Claude can never accidentally modify source files:
+
+```bash
+chmod -R 555 /path/to/your-kb-folder/raw
 ```
 
 ### 2. Create a Cowork Project
@@ -89,6 +95,24 @@ kb-qa automatically picks the right format:
 - Side-by-side comparison → Markdown table
 
 All outputs saved to `output/YYYY-MM-DD-slug.ext`.
+
+### Companion notes
+
+When dropping a source into `raw/`, you can add context by mentioning it in your
+message to Claude:
+
+> "Ingest this paper — I found it while reading about X and I'm curious whether it
+> addresses Y."
+
+kb-ingest will automatically write a `source-filename.pdf.note.md` companion file
+into `raw/` capturing your context before proceeding. That note travels through the
+ingest report and into the wiki article's Sources section, preserving your research
+trail alongside the source content.
+
+You can also write the note yourself — just create `source-filename.note.md` next
+to the source file before ingesting. kb-ingest will use it as-is.
+
+If you say nothing, no note is generated. It's always optional.
 
 ### Ingest log
 

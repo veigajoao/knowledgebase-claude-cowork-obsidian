@@ -75,6 +75,13 @@ Match the output format to the type of request:
 
 Always save outputs to output/, never respond with the answer only in chat.
 
+## Companion notes
+When the user provides context in their message about why they're adding a source
+(e.g. "I found this while researching X"), kb-ingest writes a `.note.md` companion
+file into raw/ before ingesting. The note captures their exact words and travels
+through the ingest report into the wiki. Never overwrite a note the user wrote
+themselves. Never fabricate context if none was provided.
+
 ## General rules
 - Always read index/master-index.md before answering any Q&A task.
 - Prefer updating an existing article over creating a duplicate.
